@@ -6,8 +6,6 @@ on an 8×8 chessboard such that none of them attack one another
 (no two are in the same row, column, or diagonal).
 More generally, the n queens problem places n queens
 on an n×n chessboard.
-
-
 */
 int SafeCheck(int n,int POS[n],int Crow,int Ccol)
 {
@@ -49,10 +47,6 @@ int SafeCheck(int n,int POS[n],int Crow,int Ccol)
                 return 0;
             }
         }
-                 //printf("\nLL  i :%d    POS[%d] : %d    Ccol : %d",i,i,POS[i],Ccol);
-
-
-        //
         Count++;
     }
     return 1;
@@ -61,7 +55,7 @@ int SafeCheck(int n,int POS[n],int Crow,int Ccol)
 
 int main()
 {
-    printf("Hello world!\n");
+    //printf("Hello world!\n");
     int N=8;
     //printf("Enter the Matrix SIZE : ");
     //scanf("%d",&N);
@@ -72,9 +66,9 @@ int main()
         pos[i]=-1;
     }
     //pos[0]=1;
-    for(int i =0;i<N;i++)
-    printf("%d ",pos[i]);
-    printf("\n");
+    //for(int i =0;i<N;i++)
+    //printf("%d ",pos[i]);
+    //printf("\n");
 
     int r=0,c=0;
     while(r<N)
@@ -101,12 +95,10 @@ int main()
                     //printf("\n");
                 */
                 r=r-2;
-
                 //c=pos[r]+1;
                 //printf("\n c: %d   r: %d ",c,r);
                 break;
             }
-
             if(SafeCheck(N,pos,r,c))
             {
                 pos[r]=c;
@@ -119,26 +111,17 @@ int main()
                 //for(int i =0;i<N;i++)
                 //    printf("%2d ",pos[i]);
                 //    printf("\n");
-
-
-
                 break;
             }
             c++;
-
          }
          r++;
-
     }
     for(int i =0;i<N;i++)
-    printf("%2d ",i);
-    printf("\n");
-
-        for(int i =0;i<N;i++)
-    printf("%2d ",pos[i]);
-    printf("\n");
-
-
-
+        printf("%2d ",i);
+        printf("\n");
+    for(int i =0;i<N;i++)
+        printf("%2d ",pos[i]);
+        printf("\n");
     return 0;
 }
